@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "2ce6b553-2cda-4088-8efe-839997f7b9d3",
+		"name": "CollectionFilter",
+		"description": "Collection with testing filter operations.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34a4837c-c3e9-4003-99c2-3e50eb3fb5f1",
+						"exec": [
+							"pm.test('Status code is 200', function() {",
+							"    pm.response.to.have.status(200); ",
+							"});",
+							"",
+							"pm.test(`Collection isn't empty`, function() {",
+							"    const responseJson = pm.response.json();",
+							"    const key = pm.iterationData.get(\"key\");",
+							"    const value = pm.iterationData.get(\"value\")",
+							"    console.log(`Key ${key} should be equal ${value}`);",
+							"    for(let item in responseJson.results) {",
+							"        pm.expect(item[key]).to.equal(value);",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mishhan-invoices-app.herokuapp.com/invoices?{{key}}={{value}}",
+					"protocol": "https",
+					"host": [
+						"mishhan-invoices-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"invoices"
+					],
+					"query": [
+						{
+							"key": "{{key}}",
+							"value": "{{value}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

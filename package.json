@@ -1,0 +1,23 @@
+{
+  "name": "web-developing-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mishhan/web-developing-course.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mishhan/web-developing-course/issues"
+  },
+  "homepage": "https://github.com/mishhan/web-developing-course#readme",
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2",
+    "uuid-js": "^0.7.5"
+  }
+}

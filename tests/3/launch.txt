@@ -1,0 +1,2 @@
+newman run CollectionFilter.postman_collection.json -r -d test_data.json -n 7
+newman run CRUD.postman_collection.json -r

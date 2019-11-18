@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "b3a9d115-04be-4472-8ee8-869845faa939",
+		"name": "CollectionCRUD",
+		"description": "Collection with testing CRUD-operations.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae4fd41e-19b8-4a12-9dcb-5c18be86e7db",
+						"exec": [
+							"pm.test('Status code is 200', function() {",
+							"   pm.response.to.have.status(200); ",
+							"});",
+							"",
+							"pm.test(`Collection isn't empty`, function() {",
+							"   pm.expect(Object.keys(pm.response.json()).length).to.gte(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mishhan-invoices-app.herokuapp.com/invoices",
+					"protocol": "https",
+					"host": [
+						"mishhan-invoices-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"invoices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7b11be26-e52f-4af0-88f4-eb704845d98e",
+						"exec": [
+							"pm.test('Status code is 201', function() {",
+							"   pm.response.to.have.status(201); ",
+							"});",
+							"",
+							"pm.test(`Object is added`, function() {",
+							"    const responseJson = pm.response.json();",
+							"    pm.environment.set(\"id\", responseJson[\"id\"]);",
+							"    pm.expect(Object.keys(pm.response.json())).to.contains(\"id\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"comment\": \"Task 2\",\r\n  \"date_created\": \"September 11, 2019\",\r\n  \"date_due\": \"Oct 19, 2019\",\r\n  \"date_supply\": \"Oct 07, 2019\",\r\n  \"direction\": \"965c66d4-dff7-4c5d-9d09-d0cf8276073a\",\r\n  \"number\": \"INV-00001\"\r\n}"
+				},
+				"url": {
+					"raw": "https://mishhan-invoices-app.herokuapp.com/invoices",
+					"protocol": "https",
+					"host": [
+						"mishhan-invoices-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"invoices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "930f8377-0e01-4021-be42-2e075f4f0a44",
+						"exec": [
+							"pm.test('Status code is 200', function() {",
+							"   pm.response.to.have.status(200); ",
+							"});",
+							"",
+							"pm.test(`Object is updated`, function() {",
+							"   pm.expect(Object.keys(pm.response.json())).to.contains(\"id\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comment\": \"Task 2 updated comment\",\n\t\"date_created\": \"Mar 21, 1971\",\n\t\"date_due\": \"Jan 14, 1991\",\n\t\"date_supply\": \"Oct 20, 2014\",\n\t\"direction\": \"bee33a4c-e0cf-4f2c-80b5-93ccab966e46\",\n\t\"number\": \"39804\"\n}"
+				},
+				"url": {
+					"raw": "https://mishhan-invoices-app.herokuapp.com/invoices/{{id}}",
+					"protocol": "https",
+					"host": [
+						"mishhan-invoices-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"invoices",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4f54fa9a-2230-4607-bff3-c9dfaa597d21",
+						"exec": [
+							"pm.test('Status code is 200', function() {",
+							"   pm.response.to.have.status(200); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://mishhan-invoices-app.herokuapp.com/invoices/{{id}}",
+					"protocol": "https",
+					"host": [
+						"mishhan-invoices-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"invoices",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
