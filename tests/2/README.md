@@ -1,6 +1,6 @@
 # 2
 
-## Создание накладной
+## Create invoice
 
 ### Postman
 ![Postman Request](./add_postman.png)
@@ -11,7 +11,7 @@
 ### Fiddler Response
 ![Fiddler Response](./add_fiddler_response.png)
 
-## Изменение накладной
+## Update invoice
 
 ### Postman
 ![Postman Request](./update_postman.png)
@@ -22,7 +22,7 @@
 ### Fiddler Response
 ![Fiddler Response](./update_fiddler_response.png)
 
-## Удаление накладной
+## Delete invoice
 
 ### Postman
 ![Postman Request](./delete_postman.png)

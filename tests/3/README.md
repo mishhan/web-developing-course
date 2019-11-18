@@ -1,21 +1,19 @@
 # 3
 
-## Минимальный набор тестов в первой коллекции:
+## The minimum test suite in the first collection:
 
-1. Тест на получение всех накладных
-2. Тест на добавление накладных
-3. Тест на изменение накладных
-4. Тест на удаление накладных
-
-### Dinamyc version
+1. Test for receiving all invoices
+2. Test for adding invoices
+3. Test for changing invoices
+4. The invoice removal test
 
 [Solution](./CRUD.postman_collection.json)
 
 ![Result](./crud_run.png)
 
-## Минимальный набор тестов во второй коллекции:
+## The minimum test suite in the second collection:
 
-### Тест на получение накладных, отфильтрованных по значению поля. Имя поля и его значение должны задаваться в переменных окружения. Для данного теста подготовить файл с JSON-массивом значений переменных окружения - каждому полю накладной должен соответствовать один элемент массива (т.е. должны быть подготовлены данные для фильтрации по значению каждого поля).
+### Test for receiving invoices filtered by field value. The field name and its value must be specified in environment variables. For this test, prepare a file with a JSON array of values of environment variables - each field of the invoice must have one element of the array (i.e., data should be prepared for filtering by the value of each field).
 
 [Solution](./CollectionFilter.postman_collection.json)
 

@@ -1,6 +1,6 @@
 # 1
 
-## Получение всех накладных, любое поле которых содержит цифру “7”
+## Receiving all invoices, any field of which contains the number “7”
 
 ### Chrome
 ![Chrome Request](./all_7_chrome.png)
@@ -11,7 +11,7 @@
 ### Fiddler
 ![Fiddler Request](./all_7_fiddler.png)
 
-## Получение всех накладных, значение поля number которых меньше “100000”
+## Receiving all invoices whose number field value is less than “100000”
 
 ### Chrome
 ![Chrome Request](./number_less_100000_chrome.png)
