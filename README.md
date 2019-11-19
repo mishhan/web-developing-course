@@ -1,6 +1,6 @@
 # web-developing-course
 
-[Flexbeery Dev School](https://flexberry.github.io/en/tds_landing-page.html "Flexbeery Dev School")
+[Flexberry Dev School](https://flexberry.github.io/en/tds_landing-page.html "Flexbeery Dev School")
 
 ## Task 1
 
